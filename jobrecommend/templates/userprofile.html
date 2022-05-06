@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+{% block title %}
+User Profile
+{% endblock  %}
+
+{% load static %}
+
+{% block content %}
+
+       <div class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">User Profile</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Contact Section ======= -->
+
+    <section id="contact" class="contact">
+      <div class="container" >
+
+        <div class="row mt-5 justify-content-center" data-aos="fade-up" style="background-color:powderblue;padding-top:20px;">
+          <div class="col-lg-6" style="color:black;">
+
+   <p>Username:  {{request.user.username}}</p>
+   <p>Email-Address: {{data.email}}</p>
+   <p>Fullname: {{data.fullname}}</p>
+   <p>About myself: {{data.aboutyourself}}</p>
+   <p>Gender: {{data.gender}}</p>
+   <p>Degree: {{data.degree}}</p>
+   <p>Subject: {{data.subject}}</p>
+   <p>Present Job Designation: {{data.presentjobdesignation}}</p>
+   <p>Previous Job Designation: {{data.pastjobdesignation}}</p>
+   <p>Field of Ineterest: {{data.fieldofinterest}}</p>
+   <p>Contact No.: {{data.contactno}}</p>
+   <p>Permanent-Address: {{data.permanentaddress}}</p>
+   <p>Present-Address: {{data.presentaddress}}</p>
+   <button type="button" class="btn btn-success btn-block"><a href="/registration/showcv" style="color:white;">Your CV</a></button>
+   <button type="button" class="btn btn-success btn-block"><a href="/registration/userprofileedit" style="color:white;">Edit profile</a></button>
+   </ul>
+
+
+
+
+
+
+        
+
+  
+  <br>
+ 
+
+  
+          </div>
+
+        </div>
+
+      </div>
+    </section> 
+    
+
+    
+
+{% endblock  %}
+		

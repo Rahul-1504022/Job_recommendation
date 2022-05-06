@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block title %}
+Job List
+{% endblock  %}
+
+{% load static %}
+
+{% block content %}
+
+       <div class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">All Job List</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--content in joblist page-->
+    {% if user.is_authenticated  %}
+	  <div class ="container">
+	    <button type="button" class="btn btn-success btn-block"><a href="/registration/recommendedjob" style="color:white;">Recommended Job For You</a></button>
+      <button type="button" class="btn btn-success btn-block"><a href="/registration/cv_recommendedjob" style="color:white;">Recommended Job According to your CV</a></button>
+    </div>
+    {% else %}
+    <div class ="container">
+	    <button type="button" class="btn btn-success btn-block"><a href="/registration/userlogin" style="color:white;">Login to see Recommended Job For You</a></button>
+    </div>
+    {% endif %}
+    		<section class="ftco-section bg-light">
+			<div class="container" style="background-color:#f2f2f2;padding:30px;box-shadow: 4px 4px;">
+	
+		{% if d %}  
+        {% for Job_list in d %}
+		<div class="container" style="border:solid 1px;margin-bottom:10px;box-shadow: 4px 4px #888888;background-color:white;">	
+		        <h2 class="text-black" style="font-size:25px;"><a href="#">{{Job_list.jobtitle}}</a></h2>
+                <div style="float:left;"><span class="icon-layers"></span> <a href="#">{{Job_list.company}}</a></div>
+		        <div><span class="icon-my_location" style="padding-left:30px;"></span> <span>{{Job_list.city}}</span><span style="padding-left:40%"><a href="#" class="btn btn-primary py-2">Apply Job</a></span></div>
+		        
+		</div>
+		{% endfor %}
+    
+		{% endif %}
+		    </div>
+            </section>
+
+{% endblock  %}

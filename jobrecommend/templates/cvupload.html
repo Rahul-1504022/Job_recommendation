@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+Upload CV
+{% endblock  %}
+
+{% load static %}
+
+{% block content %}
+       <div class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">CV Upload</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="container">
+
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-6">
+
+           <form action="" method="post" role="form" enctype="multipart/form-data">
+           {% csrf_token %}
+
+           <div class="form-group">
+                <input type="text" class="form-control" name="username" id="username" placeholder="User Name" />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="file" class="form-control" name="cv" id="cv" placeholder="" />
+                <div class="validate"></div>
+            </div>
+
+           <div class="text-center"><button type="submit" class="btn btn-success btn-block">Upload</button></div>
+            </form><br>
+
+           </div>
+        </div>
+</div>
+
+{% endblock  %}

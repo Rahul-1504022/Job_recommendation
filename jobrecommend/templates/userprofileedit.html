@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+{% block title %}
+Edit User Profile
+{% endblock  %}
+
+{% load static %}
+
+{% block content %}
+
+       <div class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">Edit {{request.user.username}} Profile</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="container">
+
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-6">
+          
+            <form action="" method="post" role="form" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" id="username" placeholder="User Name" />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email-Address" />
+                <div class="validate"></div>
+            </div>
+
+        
+            <div class="form-group">
+                <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" />
+                <div class="validate"></div>
+            </div>
+
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="aboutyourself" id="aboutyourself" placeholder="About yourself"  />
+                <div class="validate"></div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                 <select name="gender" id="gender">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Others">Others</option>
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="degree" id="degree" placeholder="Name of Degree"  />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"  />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="presentjobdesignation" id="presentjobdesignation" placeholder="Present Job Designation"  />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="pastjobdesignation" id="pastjobdesignation" placeholder="Previous Job Designation"  />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="ineterest" id="ineterest" placeholder="Field of Interest"  />
+                <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="contactno" id="contactno" placeholder="Contact No"  />
+                <div class="validate"></div>
+            </div>
+
+           
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="permanentaddress" id="permanentaddress" placeholder="Permanent Address"  />
+                <div class="validate"></div>
+            </div>
+
+             <div class="form-group">
+                <input type="text" class="form-control" name="presentaddress" id="presentaddress" placeholder="Present Address"  />
+                <div class="validate"></div>
+            </div>
+
+        
+            <div class="text-center"><button type="submit" class="btn btn-success btn-block">Upload</button></div>
+            </form><br>
+            {% for message in messages %}
+            <p id="messages">{{message}}</p>
+            {% endfor %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+{% endblock  %}

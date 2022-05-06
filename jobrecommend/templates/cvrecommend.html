@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{% block title %}
+Recommended Job
+{% endblock  %}
+
+{% load static %}
+
+{% block content %}
+       <div class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">Recommended Jobs for you</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--content in joblist page-->
+
+<!--{% if d %}
+<div class="container">
+<p>{{d.0}}</p>
+<p>{{d.1}}</p>
+<p>{{d.2}}</p>
+<p>{{d.3}}</p>
+<p>{{d.4}}</p>
+<p>{{d.5}}</p>
+<p>{{d.6}}</p>
+<p>{{d.7}}</p>
+<p>{{d.8}}</p>
+<p>{{d.9}}</p>
+<p>{{d.10}}</p>
+<p>{{d.11}}</p>
+<p>{{d.12}}</p>
+<p>{{d.13}}</p>
+<p>{{d.14}}</p>
+<p>{{d.15}}</p>
+<p>{{d.16}}</p>
+<p>{{d.17}}</p>
+<p>{{d.18}}</p>
+<p>{{d.19}}</p>
+</div>
+{% endif %}-->
+<!--{% if d %}
+<div class="container" style="background-color:powderblue;">
+{% for i,j in d%}
+<div class="container" style="color:black;border:solid 1px;margin-bottom:10px;box-shadow: 4px 4px #888888;background-color:white;font-weight:bold;font-style: normal;font-size:20px;font-family:Times New Roman, Times, serif;">
+<p><a href="#" style="color:black;">{{i}}</a></p>
+<p class="icon-layers">{{j}}</p>
+</div>
+{% endfor %}
+</div>
+{% endif %}-->
+{% if job %}
+<div class="container" style="background-color:powderblue;">
+{% for i,j in job %}
+<div class="container" style="color:black;border:solid 1px;margin-bottom:10px;box-shadow: 4px 4px #888888;background-color:white;font-weight:bold;font-style: normal;font-size:20px;font-family:Times New Roman, Times, serif;">
+<p><a href="#" style="color:black;">{{i}}</a></p>
+<p style="color:black;" class="icon-layers">{{j}}</p>
+
+</div>
+{% endfor %}
+</div>
+{% endif %}
+	
+
+{% endblock  %}
